@@ -44,10 +44,7 @@ public class RotateSun : MonoBehaviour
     private void CheckTime()
     {
         Debug.Log("Rotation: " + transform.eulerAngles);
-        if (transform.eulerAngles.x <= NightTimeStart)
-        {
-            _currentTime = TIME.NIGHT;
-        }else if (transform.eulerAngles.x <= AfterNoonTimeStart)
+        if (transform.eulerAngles.x <= AfterNoonTimeStart)
         {
             _currentTime = TIME.AFTERNOON;
         }
@@ -58,6 +55,9 @@ public class RotateSun : MonoBehaviour
         else if (transform.eulerAngles.x <= MorningTimeStart)
         {
             _currentTime = TIME.MORNING;
+        }else if (transform.eulerAngles.x <= NightTimeStart)
+        {
+            _currentTime = TIME.NIGHT;
         }
         else
         {
